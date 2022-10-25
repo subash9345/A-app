@@ -1,0 +1,16 @@
+
+<input type="text"  [(ngModel)]="subash">
+<p>{{subash}}</p>
+
+
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onServer()"> Add server</button>
+<!-- <p>{{allowNewServer}}</p> --><br>
+<!-- <p>{{ onCreation}}</p> -->
+<p *ngIf="serverCreate; else noserver ">{{onCreation}} ,server name is {{ subash}}</p>
+<ng-template #noserver>{{onCreation}}</ng-template>
+
+
+
+<input type="text" [(ngModel)]="Sname"> <br>
+<button [disabled]=" Sname === ' ' " (click)="onReset()">reset</button>
+<app-server></app-server>
